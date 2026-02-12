@@ -6,6 +6,8 @@ from multi_adaboost_CNN import AdaBoostClassifier as Ada_CNN
 import test2_CNN
 from sklearn.model_selection import KFold
 import lightgbm as lgb
+
+
 def kfold(data, k, row=0, col=0, cv=3):
     dlen = len(data)
     if cv != 4:
@@ -74,6 +76,7 @@ def kfold(data, k, row=0, col=0, cv=3):
             train_s.append(train_)
             test_s.append(test_)
         return train_s, test_s
+    
 for mm in (1,2,3,4):
     f_1 = open('res.txt', 'a')
     time = 5
