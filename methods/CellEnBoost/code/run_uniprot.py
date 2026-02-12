@@ -208,7 +208,7 @@ def train_models(X_train: np.ndarray, y_train: np.ndarray, batch_size: int, cnn_
     print("CNN reshaped X_train:", X_train_r.shape)
     cnn = Ada_CNN(
         base_estimator=test2_CNN.baseline_model(n_features=cnn_n_features),
-        n_estimators=3,
+        n_estimators=10,
         learning_rate=1,
         epochs=1,
     )
@@ -216,7 +216,7 @@ def train_models(X_train: np.ndarray, y_train: np.ndarray, batch_size: int, cnn_
 
     # LightGBM branch
     print("LightGBM training on X_train:", X_train.shape)
-    lgbm = lgb.LGBMClassifier(learning_rate=0.1, n_estimators=200)
+    lgbm = lgb.LGBMClassifier(learning_rate=0.1, n_estimators=1000)
     lgbm.fit(X_train, y_train)
 
     return cnn, lgbm
