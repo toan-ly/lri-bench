@@ -345,8 +345,8 @@ def main():
     seq_csv = os.path.join(args.data_dir, "protein_sequences_info.csv")
     seq_map = load_sequences(seq_csv)
 
-    # groups = ["SL", "SR", "SRcp", "SLRcp"]
-    groups = ["SL"]  # for quick testing; change to all groups for full run
+    groups = ["SL", "SR", "SRcp", "SLRcp"]
+    # groups = ["SL"]  # for quick testing; change to all groups for full run
     results = []
     for g in groups:
         print('' + '=' * 40)
